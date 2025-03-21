@@ -1,7 +1,7 @@
 # <h1 align="center">TACOS: Open Tagging and Comparative Scoring for Instruction Fine-Tuning Data Selection</h1>
 
 <div align="center">
-    <img src="figures/overview.png" alt="Overview Image" width="800"/>
+    <img src="figures/overview-tacos.png" alt="Overview Image" width="800"/>
 </div>
 
 This project introduces TACOS, a novel method for Instruction Fine-Tuning (IFT) of large language models (LLMs). TACOS enhances data selection through Open-tag clustering and Contrastive Scoring, improving data diversity and stability. Our experiments demonstrate that TACOS significantly outperforms existing methods, achieving superior instruction-following performance on MT-Bench.
