@@ -4,7 +4,7 @@
     <img src="figures/overview.png" alt="Overview Image" width="800"/>
 </div>
 
-This project introduces TACOS, a novel method for Instruction Fine-Tuning (IFT) of large language models (LLMs). TACOS enhances data selection through Open-tag clustering and Contrastive Scoring, improving data diversity and stability. Our experiments demonstrate that OpenCS significantly outperforms existing methods, achieving superior instruction-following performance on MT-Bench.
+This project introduces TACOS, a novel method for Instruction Fine-Tuning (IFT) of large language models (LLMs). TACOS enhances data selection through Open-tag clustering and Contrastive Scoring, improving data diversity and stability. Our experiments demonstrate that TACOS significantly outperforms existing methods, achieving superior instruction-following performance on MT-Bench.
 
 <a href="https://github.com/hexixiang">Xixiang He</a>, <a href="https://github.com/haoyu94">Hao Yu</a>, <a href="https://github.com/chengao18">Ao Cheng</a>, <a href="https://github.com/Antiman-cmyk">Qiyao Sun</a>, <a href="https://github.com/JohnTeller722">Tailai Zhang</a>, <a href="https://github.com/liangren-danggui">Cong Liu</a>, <a href="https://github.com/GUOShuxuan">Shuxuan Guo</a>
 
@@ -48,11 +48,11 @@ Optional additional dependencies include: torch、torch-npu、metrics、deepspee
 
 ## Data Release
 
-- `data/alpaca/filtered_alpaca_1k_opencs.json` is the top 1k selected data, filtered from 52k instruction-following data of Alpaca through a process of open-tag clustering followed by contrastive scoring. This dataset is curated to maximize diversity and ensure high-quality data selection for IFT.
-- `data/alpaca/refined_alpaca_1k_opencs.json` is the refined version of `filtered_alpaca_1k_opencs.json`, where we use ChatGPT to further enhance the quality and coherence of the data, resulting in a final set of 1k refined examples.
-- `data/evol-instruct/filtered_evol_instruct_1k_opencs` is a dataset of 1k high-quality examples, selected from the evol-instruct 70k dataset using the same data selection method to ensure data diversity and quality for IFT.
-- `data/ablation_data/alpaca_1k_opencs_wo_contrastive_score.json` is the dataset used for ablation studies, where data was selected solely based on open-tag clustering without using contrastive scoring. Instead, individual scoring was applied to validate the effectiveness of our contrastive scoring module.
-- `data/ablation_data/alpaca_1k_opencs_wo_open_tag_cluster.json` is the dataset used for ablation studies to validate the effectiveness of the open-tag clustering. The top 1k examples were selected solely through contrastive scoring from the entire dataset, without using the open-tag clustering method.
+- `data/alpaca/filtered_alpaca_1k_tacos.json` is the top 1k selected data, filtered from 52k instruction-following data of Alpaca through a process of open-tag clustering followed by contrastive scoring. This dataset is curated to maximize diversity and ensure high-quality data selection for IFT.
+- `data/alpaca/refined_alpaca_1k_tacos.json` is the refined version of `filtered_alpaca_1k_tacos.json`, where we use ChatGPT to further enhance the quality and coherence of the data, resulting in a final set of 1k refined examples.
+- `data/evol-instruct/filtered_evol_instruct_1k_tacos` is a dataset of 1k high-quality examples, selected from the evol-instruct 70k dataset using the same data selection method to ensure data diversity and quality for IFT.
+- `data/ablation_data/alpaca_1k_tacos_wo_contrastive_score.json` is the dataset used for ablation studies, where data was selected solely based on open-tag clustering without using contrastive scoring. Instead, individual scoring was applied to validate the effectiveness of our contrastive scoring module.
+- `data/ablation_data/alpaca_1k_tacos_wo_open_tag_cluster.json` is the dataset used for ablation studies to validate the effectiveness of the open-tag clustering. The top 1k examples were selected solely through contrastive scoring from the entire dataset, without using the open-tag clustering method.
 
 ## Open-Tag Clustering and Contrastive Scoring
 ### Open-tag Clustering
@@ -123,13 +123,13 @@ sh gen_answer.sh
 
 ## Evaluation
 
-We conducted a preference evaluation to compare the performance of OpenCS against several baseline methods. The evaluation was carried out on two datasets: Alpaca52k and Evol-Instruct-70k, using the LLaMA2-7B model.
+We conducted a preference evaluation to compare the performance of TACOS against several baseline methods. The evaluation was carried out on two datasets: Alpaca52k and Evol-Instruct-70k, using the LLaMA2-7B model.
 
-The preference evaluation results, shown below, demonstrate the win, tie, and lose rates of OpenCS compared to the baseline methods. The rows represent the five test sets used in the evaluation, while the columns correspond to the four baseline methods.
+The preference evaluation results, shown below, demonstrate the win, tie, and lose rates of TACOS compared to the baseline methods. The rows represent the five test sets used in the evaluation, while the columns correspond to the four baseline methods.
 
 ### Preference Evaluation Results (in %)
 
-The results clearly show that OpenCS consistently achieves higher preference scores compared to the existing methods across both datasets.
+The results clearly show that TACOS consistently achieves higher preference scores compared to the existing methods across both datasets.
 
 <div align="center">
     <img src="figures/main_results.png" alt="Preference Evaluation Results" width="600"/>
@@ -168,7 +168,7 @@ This evaluation process provides valuable insights into the relative performance
 
 We conducted a single-score evaluation on MT-Bench across different base LLMs and IFT datasets. Scores were generated by GPT-4 on a scale ranging from [1, 10]. The results highlight the effectiveness of our approach, with the best performing methods bolded and the second best methods underlined.
 
-The following table summarizes the scores obtained by OpenCS compared to other baseline methods on various datasets. These results demonstrate that OpenCS consistently achieves high scores, affirming its superiority in instruction-following tasks.
+The following table summarizes the scores obtained by TACOS compared to other baseline methods on various datasets. These results demonstrate that TACOS consistently achieves high scores, affirming its superiority in instruction-following tasks.
 
 <div align="center">
     <img src="figures/mt-bench.png" alt="MT-Bench Results" style="width:60%;"/>
