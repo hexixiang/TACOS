@@ -1,10 +1,10 @@
-# <h1 align="center">OpenCS: Open-Tag Clustering and Contrastive Scoring for Instruction Fine-Tuning Data Selection</h1>
+# <h1 align="center">TACOS: Open Tagging and Comparative Scoring for Instruction Fine-Tuning Data Selection</h1>
 
 <div align="center">
     <img src="figures/overview.png" alt="Overview Image" width="800"/>
 </div>
 
-This project introduces OpenCS, a novel method for Instruction Fine-Tuning (IFT) of large language models (LLMs). OpenCS enhances data selection through Open-tag clustering and Contrastive Scoring, improving data diversity and stability. Our experiments demonstrate that OpenCS significantly outperforms existing methods, achieving superior instruction-following performance on MT-Bench.
+This project introduces TACOS, a novel method for Instruction Fine-Tuning (IFT) of large language models (LLMs). TACOS enhances data selection through Open-tag clustering and Contrastive Scoring, improving data diversity and stability. Our experiments demonstrate that OpenCS significantly outperforms existing methods, achieving superior instruction-following performance on MT-Bench.
 
 <a href="https://github.com/hexixiang">Xixiang He</a>, <a href="https://github.com/haoyu94">Hao Yu</a>, <a href="https://github.com/chengao18">Ao Cheng</a>, <a href="https://github.com/Antiman-cmyk">Qiyao Sun</a>, <a href="https://github.com/JohnTeller722">Tailai Zhang</a>, <a href="https://github.com/liangren-danggui">Cong Liu</a>, <a href="https://github.com/GUOShuxuan">Shuxuan Guo</a>
 
